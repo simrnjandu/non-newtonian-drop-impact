@@ -1,0 +1,75 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  9
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 9-b456138dc4bc
+Exec   : blockMesh
+Date   : Apr 30 2023
+Time   : 10:22:33
+Host   : "ubuntu"
+PID    : 26727
+I/O    : uncollated
+Case   : /home/ubuntu/OpenFOAM/ubuntu-9/run/ImpactingDrop/Oldroyd-BLog
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Reading "blockMeshDict"
+
+Creating block mesh from
+    "system/blockMeshDict"
+Creating block edges
+No non-planar block faces defined
+Creating topology blocks
+Creating topology patches
+
+Creating block mesh topology
+
+Check topology
+
+	Basic statistics
+		Number of internal faces : 0
+		Number of boundary faces : 6
+		Number of defined boundary faces : 6
+		Number of undefined boundary faces : 0
+	Checking patch -> block consistency
+
+Creating block offsets
+Creating merge list .
+
+Creating polyMesh from blockMesh
+Creating patches
+Creating cells
+Creating points with scale 0.06
+    Block 0 cell size :
+        i : 0.0005 .. 0.0005
+        j : 0.0005 .. 0.0005
+        k : 0 3.48995e-05 0 3.48995e-05 
+
+Writing polyMesh
+----------------
+Mesh Information
+----------------
+  boundingBox: (0 0 -0.00209397) (0.0599634 0.06 0.00209397)
+  nPoints: 29161
+  nCells: 14400
+  nFaces: 57720
+  nInternalFaces: 28560
+----------------
+Patches
+----------------
+  patch 0 (start: 28560 size: 120) name: plate
+  patch 1 (start: 28680 size: 240) name: atmosphere
+  patch 2 (start: 28920 size: 0) name: axis
+  patch 3 (start: 28920 size: 14400) name: wFront
+  patch 4 (start: 43320 size: 14400) name: wBack
+
+End
+

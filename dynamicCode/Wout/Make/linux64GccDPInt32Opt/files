@@ -1,0 +1,6 @@
+# dynamicCode:
+# SHA1 = 320a7bdc07c694c87eb6530a3865fb3d4a87048e
+
+SOURCE += codedFunctionObjectTemplate.C
+
+LIB = $(PWD)/../platforms/$(WM_OPTIONS)/lib/libWout_320a7bdc07c694c87eb6530a3865fb3d4a87048e

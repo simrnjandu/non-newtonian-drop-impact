@@ -1,0 +1,38 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  9
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 9-b456138dc4bc
+Exec   : setFields
+Date   : Apr 30 2023
+Time   : 10:22:34
+Host   : "ubuntu"
+PID    : 26731
+I/O    : uncollated
+Case   : /home/ubuntu/OpenFOAM/ubuntu-9/run/ImpactingDrop/Oldroyd-BLog
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+Reading "setFieldsDict"
+
+Setting field default values
+    Setting internal values of volScalarField alpha.water
+    Setting internal values of volVectorField U
+
+Setting field region values
+    Adding cells with centre within cylinder, with point1 = (0 0.04 -0.6), point2 = (0 0.04 0.6) and radius = 0.01
+    Setting internal values of volScalarField alpha.water
+    Setting internal values of volVectorField U
+
+End
+
