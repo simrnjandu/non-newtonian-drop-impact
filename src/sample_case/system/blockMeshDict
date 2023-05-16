@@ -1,0 +1,108 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Website:  https://openfoam.org                  |
+|   \\  /    A nd           | Version:  9                                     |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      ascii;
+    class       dictionary;
+    object      blockMeshDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+convertToMeters 0.001; // Thus, all values in the file are in mm
+
+angle 5; //degrees
+
+xmin 0;
+xmax 6;
+lx #calc "$xmax - $xmin";
+
+ymin 0;
+ymax 16;
+ly #calc "$ymax - $ymin";
+
+zmax #calc "tan(degToRad(($angle)/2))*($lx)";
+zmin #calc "-$zmax";
+
+deltax 0.05;	
+deltay 0.05;	
+deltaz 0.05;	
+
+xcells #calc "round(($lx)/($deltax))";
+ycells #calc "round(($ly)/($deltay))";
+zcells 1;
+
+vertices
+(
+    ($xmin $ymax 0) 
+    ($xmin $ymin 0) 
+    ($xmax $ymin $zmin) 
+    ($xmax $ymax $zmin)
+    ($xmax $ymin $zmax) 
+    ($xmax $ymax $zmax)
+);
+
+blocks
+(
+  hex (1 2 3 0 1 4 5 0) ($xcells $ycells $zcells) simpleGrading (1 1 1)
+);
+
+edges
+(
+);
+
+boundary
+(
+    plate
+     {
+        type patch;
+        faces
+        (
+            (1 2 4 1)
+        );
+    }
+    atmosphere
+    {
+        type patch;
+        faces
+        (
+            (0 3 5 0)
+            (3 2 4 5)
+        );
+    }
+    axis
+    {
+        type empty;
+        faces
+        (
+            (0 1 1 0)           
+        );
+    }
+    wFront
+    {
+        type wedge;
+        faces
+        (
+            (0 1 4 5)           
+        );
+    }
+    
+    wBack
+    {
+        type wedge;
+        faces
+        (
+            (0 1 2 3)          
+        );
+    }
+);
+
+mergePatchPairs
+(
+);
+
+// ************************************************************************* //
